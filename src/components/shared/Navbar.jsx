@@ -3,7 +3,13 @@ const Navbar = () => {
 
     return (
         <>
-            <h1>Navbar Works!</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>Cart</li>
+                </ul>
+            </nav>
         </>
     )
 }
