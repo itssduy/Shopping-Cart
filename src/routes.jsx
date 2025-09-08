@@ -1,6 +1,4 @@
-
-
-import App from './App'
+import App from './components/App'
 import Cart from './components/pages/Cart'
 import Home from './components/pages/Home'
 import Shop from './components/pages/Shop'
