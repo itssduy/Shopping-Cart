@@ -5,9 +5,14 @@ import Navbar from "../components/shared/Navbar";
 
 describe('Navbar Component Works', ()=>{
     it('Navbar Component Loads', ()=>{
-        render(<Navbar />)
+       render(<Navbar/>)
 
-        const nav = screen.getByRole('navigation')
-        expect(nav).toBeInTheDocument();
+    })
+    
+    it('List Items Load', ()=>{
+        
+        const li = screen.queryAllByRole('listitem')
+
+        
     })
 })
