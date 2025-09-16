@@ -12,7 +12,7 @@ const routes = [
         errorElement: <Error />,
         children: [
             {
-                path: '/',
+                path: 'home',
                 element: <Home />,
             },
             {
