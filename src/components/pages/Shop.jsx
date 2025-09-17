@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { useEffect, useState } from 'react';
 import '../styles/Shop.css'
 
@@ -8,7 +9,7 @@ const Shop = () => {
     useEffect(()=>{
         const tempArr = [...items]
         for(let i = 0; i < 20; i++){
-            tempArr[i] = i;
+            tempArr[i] = "item-" + i;
         }
         setItems(tempArr);
     }, [])
@@ -19,7 +20,7 @@ const Shop = () => {
             <section className="container">
                 <div className='shop'>
                     {items.map((x, i)=>{
-                        return  <p key={i}> Item {x}</p>
+                        return  <Link to={`${x}`}><p key={i}> {x}</p></Link>
                     })}
                 </div>
             </section>
