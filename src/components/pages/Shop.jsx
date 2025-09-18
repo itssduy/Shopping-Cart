@@ -14,13 +14,15 @@ const Shop = () => {
         setItems(tempArr);
     }, [])
     
+ 
+
 
     return (
         <>
             <section className="container">
                 <div className='shop'>
                     {items.map((x, i)=>{
-                        return  <Link to={`${x}`}><p key={i}> {x}</p></Link>
+                        return  <Link to={`${x}`} key={i}><p> {x}</p></Link>
                     })}
                 </div>
             </section>
