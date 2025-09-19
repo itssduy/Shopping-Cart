@@ -1,0 +1,22 @@
+[
+    {"id": 1, "val": "Wireless Headphones", "Price": 149},
+    {"id": 2, "val": "Coffee Mug", "Price": 15},
+    {"id": 3, "val": "Laptop Stand", "Price": 45},
+    {"id": 4, "val": "Phone Case", "Price": 25},
+    {"id": 5, "val": "Bluetooth Speaker", "Price": 89},
+    {"id": 6, "val": "Desk Lamp", "Price": 35},
+    {"id": 7, "val": "Water Bottle", "Price": 18},
+    {"id": 8, "val": "Keyboard", "Price": 120},
+    {"id": 9, "val": "Mouse Pad", "Price": 12},
+    {"id": 10, "val": "USB Cable", "Price": 8},
+    {"id": 11, "val": "Notebook", "Price": 22},
+    {"id": 12, "val": "Pen Set", "Price": 30},
+    {"id": 13, "val": "Monitor", "Price": 285},
+    {"id": 14, "val": "Webcam", "Price": 65},
+    {"id": 15, "val": "Tablet", "Price": 199},
+    {"id": 16, "val": "Charger", "Price": 28},
+    {"id": 17, "val": "Backpack", "Price": 55},
+    {"id": 18, "val": "Sunglasses", "Price": 75},
+    {"id": 19, "val": "Watch", "Price": 165},
+    {"id": 20, "val": "Sneakers", "Price": 95}
+]

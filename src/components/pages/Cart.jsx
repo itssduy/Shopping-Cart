@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router"
+
 const Cart = () => {
+    const [cart, setCart] = useOutletContext();
 
 
     return (
         <>
-            <h1>Cart Page Works!</h1>
+        <ul>
+            {cart.map((item)=>{
+                return <li key={item.id}>{item.id} : {item.count}</li>
+            })}
+        </ul>
+            
         </>
     )
 }

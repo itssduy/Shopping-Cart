@@ -4,8 +4,7 @@ import './App.css'
 import { useState } from 'react'
 
 function App() {
-  const [cart, setCart] = useState({});
-
+  const [cart, setCart] = useState([]);
   
   return (
     <>

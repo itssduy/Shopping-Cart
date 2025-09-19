@@ -2,14 +2,14 @@ import { useOutletContext } from "react-router"
 
 const Item = ()=>{
 
-    const addItem = useOutletContext();
+    const addItemToCart = useOutletContext();
 
 
 
     return (
         <div >
             Item
-            <button onClick={addItem}>BUY NOW</button>
+            <button onClick={addItemToCart}>BUY NOW</button>
         </div>
     )
 }
