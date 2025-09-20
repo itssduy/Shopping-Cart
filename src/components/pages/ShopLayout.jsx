@@ -18,7 +18,6 @@ const ShopLayout = ()=>{
 
     const addItemToCart = ()=>{
 
-        //console.log(cart)
         if(itemInCart()){
             let tempCart = [...cart]
 
