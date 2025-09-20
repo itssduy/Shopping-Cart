@@ -6,13 +6,12 @@ import itemsfile from '../../Items.json'
 const Shop = () => {
     const [items, setItems] = useState(itemsfile);
 
-
     return (
         <>
             <section className="container">
                 <div className='shop'>
-                    {items.map((x)=>{
-                        return  <Link to={`${x.id}`} key={x.id}><p> {x.val}</p></Link>
+                    {items.map((item)=>{
+                        return  <Link to={`${item.id}`} key={item.id}><p> {item.name}</p></Link>
                     })}
                 </div>
             </section>

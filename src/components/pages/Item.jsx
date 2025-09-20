@@ -1,8 +1,7 @@
 import { useOutletContext } from "react-router"
-
 const Item = ()=>{
-
     const addItemToCart = useOutletContext();
+
 
 
 

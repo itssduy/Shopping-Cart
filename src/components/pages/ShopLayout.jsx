@@ -1,35 +1,38 @@
 import { Outlet, useOutletContext, useParams } from "react-router"
-
+import itemFile from '../../Items.json'
 const ShopLayout = ()=>{
     const { id } = useParams();
     const [cart, setCart] = useOutletContext();
 
 
-    const itemInCart = ()=>{
-        let itemFound;
-        cart.map((item)=>{
-            if(item.id == id){
-                itemFound = item
-            }
-            
+    const findItemById = ()=>{
+
+        return itemFile.find((item)=>{
+            return item.id == id
         })
-        return itemFound
     }
 
     const addItemToCart = ()=>{
 
-        if(itemInCart()){
-            let tempCart = [...cart]
+        let tempCart = [...cart]
+        let itemFound = false;
+        tempCart = tempCart.map((item)=>{
 
-            tempCart = tempCart.map((item)=>{
-
-                let newItem = item.id == id ? {...item, count: item.count+1} : item
-                return newItem
-            })
+            let newItem = item;
+            if(item.id == id){
+                itemFound = true;
+                newItem = {...item, count: item.count+1}
+            }
+            return newItem
+        })
+        if(itemFound){
             setCart([...tempCart])
         } else {
-            setCart([...cart, {id: id, count: 1}]);
+            const curItem = findItemById();
+            setCart([...cart, {...curItem, count: 1}]);
+
         }
+        
 
     }
 
