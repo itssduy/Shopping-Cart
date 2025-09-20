@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useOutletContext } from "react-router"
 
+
+const itemsPage = '/shop/' 
+
 const Cart = () => {
-    const [cart, setCart] = useOutletContext();
+    const {cart, setCart, addItemToCart, removeItemFromCart} = useOutletContext();
 
 
     let sum = 0;
@@ -14,7 +17,17 @@ const Cart = () => {
         <>
         <ul>
             {cart.map((item)=>{
-                return <li key={item.id}> <Link to={'/shop/' + item.id}> {item.name} : {item.count} </Link> </li>
+                return (
+                    <li key={item.id}> 
+
+                        <Link to={itemsPage + item.id}> 
+                            {item.name} : {item.count} 
+                        </Link> 
+                        
+                            <button onClick={()=>{removeItemFromCart(item.id)}}>-</button>
+                            <button onClick={ ()=>{addItemToCart(item.id)}}>+</button>
+                    </li>
+                )
             })}
         </ul>
 

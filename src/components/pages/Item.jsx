@@ -1,14 +1,14 @@
-import { useOutletContext } from "react-router"
+import { useOutletContext, useParams } from "react-router"
 const Item = ()=>{
+    const { id } = useParams();
     const addItemToCart = useOutletContext();
-
 
 
 
     return (
         <div >
             Item
-            <button onClick={addItemToCart}>BUY NOW</button>
+            <button onClick={()=> {addItemToCart(id)}}>BUY NOW</button>
         </div>
     )
 }
