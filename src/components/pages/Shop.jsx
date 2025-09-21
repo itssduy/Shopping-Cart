@@ -6,9 +6,18 @@ const Shop = () => {
     const [items, setItems] = useState([]);
 
     useEffect(()=>{
-        fetch('https://fakestoreapi.com/products')
-            .then(response => response.json())
-            .then(data => setItems(data));
+        try {
+
+            (async ()=>{
+                const response = await fetch('https://fakestoreapi.com/products')
+                const data = await response.json()
+                setItems(data)
+            })()
+
+        } catch (error){
+            console.log(error)
+        }
+        
         }, [])
 
     return (
@@ -16,7 +25,13 @@ const Shop = () => {
             <section className="container">
                 <div className='shop'>
                     {items.map((item)=>{
-                        return  <Link to={`${item.id}`} key={item.id}><p className='shopItem'> {item.title}</p></Link>
+                        return  (
+                            <Link to={`${item.id}` } className='shopItem' key={item.id}>
+                                <img className='shopItemImage' src={item.image} alt="" />
+                                <p>${item.price}</p>
+                                <p className='shopItemName'> {item.title} </p>
+
+                            </Link>)
                     })}
                 </div>
             </section>
