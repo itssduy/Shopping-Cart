@@ -6,6 +6,7 @@ import Shop from './components/pages/Shop'
 import Error from './components/pages/Error'
 import Item from './components/pages/Item'
 import ShopLayout from './components/templates/ShopLayout'
+import Checkout from './components/pages/Checkout'
 
 const routes = [
     {
@@ -34,6 +35,10 @@ const routes = [
             {
                 path: 'cart',
                 element: <Cart />,
+            },
+            {
+                path: 'checkout',
+                element: <Checkout />
             }
         ]
     }
