@@ -9,7 +9,7 @@ const Navbar = ({cartLength}) => {
                 <ul className="navlist">
                     <li><Link to='/home'>Home</Link></li>
                     <li><Link to='/shop'>Shop</Link></li>
-                    <li><Link to='/cart'>Cart {cartLength}</Link></li>
+                    <li><Link to='/cart'>Cart ({cartLength})</Link></li>
                 </ul>
             </nav>
         </>

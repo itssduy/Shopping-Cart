@@ -1,9 +1,10 @@
 import { Link } from 'react-router';
 import { useEffect, useState } from 'react';
 import '../styles/Shop.css'
+import Searchbar from '../shared/Searchbar';
 
 const Shop = () => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState();
 
     useEffect(()=>{
         try {
@@ -22,9 +23,12 @@ const Shop = () => {
 
     return (
         <>
+            <Searchbar />
+
             <section className="container">
+
                 <div className='shop'>
-                    {items.map((item)=>{
+                    {items ? items.map((item)=>{
                         return  (
                             <Link to={`${item.id}` } className='shopItem' key={item.id}>
                                 <img className='shopItemImage' src={item.image} alt="" />
@@ -32,7 +36,9 @@ const Shop = () => {
                                 <p className='shopItemName'> {item.title} </p>
 
                             </Link>)
-                    })}
+                    }) : 
+                        <h1> Loading...</h1>
+                    }
                 </div>
             </section>
         </>

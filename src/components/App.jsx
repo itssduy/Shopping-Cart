@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router'
-import Navbar from './shared/Navbar'
+import Header from './templates/Header'
+import Footer from './templates/Footer'
 import './App.css'
 import { useEffect, useState } from 'react'
 
@@ -23,7 +24,6 @@ function App() {
   }
 
   const getItemById = async (id)=>{
-    let itemFound;
     try{
       const response = await fetch('https://fakestoreapi.com/products/'+id)
       
@@ -33,7 +33,6 @@ function App() {
     catch(error){
       console.log(error)
     }
-    return itemFound
 
   }
   const addItemToCart = async (id)=>{
@@ -79,8 +78,13 @@ function App() {
 
   return (
     <>
-        <Navbar cartLength={itemsInCart()}/>
-        <Outlet context={{cart, setCart, addItemToCart, removeItemFromCart, getItemById}}/>
+
+        <Header itemsInCart={itemsInCart}/>
+        <main>
+          <Outlet context={{cart, setCart, addItemToCart, removeItemFromCart, getItemById}}/>
+        </main>
+
+        <Footer />
     </>
   )
 }

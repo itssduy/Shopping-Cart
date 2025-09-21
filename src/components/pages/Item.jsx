@@ -16,13 +16,17 @@ const Item = ()=>{
 
     return (
         <div className="item">
-            <img src={item.image} alt="" />
+            {item &&
+                <>
+                    <img src={item.image} alt="" />
+                    <p>{ item && item.title} </p>
+                    <p>{ item && item.description} </p>
+                    <p>{ item && item.price} </p>
+                </>
+            }
 
-            <p>{ item && item.title} </p>
-            <p>{ item && item.description} </p>
-            <p>{ item && item.price} </p>
 
-            <button onClick={()=> {addItemToCart(id)}}>BUY NOW</button>
+            <button onClick={()=> {addItemToCart(id)}}>Add to Cart</button>
         </div>
     )
 }

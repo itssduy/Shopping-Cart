@@ -1,0 +1,9 @@
+.cartItem {
+    color: var(--primary-text-color);
+}
+
+
+.incrementButton {
+    height: 20px;
+    width: 20px;
+}

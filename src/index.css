@@ -1,3 +1,14 @@
+:root {
+   --primary-color: #232f3f; 
+   --secondary-color: #36465b;
+   --background-color: #e4e7e6;
+   --item-color: #ffffff;
+   
+
+   --primary-text-color: #232f3f;
+   --secondary-text-color: #ffffff;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -6,10 +17,13 @@
 
 html,
 body,
-#root {
+#root,
+main {
     display: flex;
     flex-direction: column;
     flex: 1;
+
+    background-color: var(--background-color);
 
 }
 

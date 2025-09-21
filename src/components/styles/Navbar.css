@@ -1,4 +1,6 @@
 nav {
+    
+    background-color: var(--secondary-color);
     border: 1px solid black;
 }
 
@@ -6,5 +8,14 @@ nav {
     display: flex;
     list-style: none;
     justify-content: space-between;
+
     padding: 0 50px;
+
+}
+
+a {
+    padding: 20px;
+    font-size: 30px;
+    color: var(--secondary-text-color);
+    text-decoration: none;
 }
