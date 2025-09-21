@@ -1,2 +1,19 @@
 .item {
+    display: flex;
+}
+
+.itemImage{
+
+}
+
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+
+
+    margin: 50px;
+    padding: 50px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: var(--background-color);
 }

@@ -18,22 +18,38 @@ const Cart = () => {
             {cart.map((item)=>{
                 return (
                     <li key={item.id} className="cartItem"> 
+                        
+                        <Link to={itemsPage + item.id} className="cartItemDetails"> 
+                            <img src={item.image}></img>
 
-                        <Link to={itemsPage + item.id} className="cartItem"> 
-                            {item.title} : {item.count}
+                            <div className="cartItemDesc">
+                                <h1>{item.title}</h1>
+                                <h3>{item.price}</h3>
+
+                            </div>
+                            
                         </Link> 
                         
-                            <button className="incrementButton" onClick={()=>{removeItemFromCart(item.id)}}>-</button>
-                            <button className="incrementButton" onClick={ ()=>{addItemToCart(item.id)}}>+</button>
+                            
+                        <div className='increment'>
+                            <button className="incrementBtn" onClick={()=>{removeItemFromCart(item.id)}}>-</button>
+                            <h1>{item.count}</h1>
+                            <button className="incrementBtn" onClick={ ()=>{addItemToCart(item.id)}}>+</button>
+                        </div>
+                        
                     </li>
                 )
             })}
         </ul>
 
 
-        <h1>Total: {sum}</h1>
-        <button>Checkout</button>
- 
+        <div className="cartInfo">
+            <h1>Total: {sum}</h1>
+            <Link to='/checkout'><button  className="checkoutBtn">Checkout</button></Link>
+
+
+        </div>
+
         </>
     )
 }

@@ -20,7 +20,9 @@ function App() {
     cart.map((item)=>{
       sum += item.count;
     })
-    return sum;
+
+    const roundedSum = (Math.round((sum + Number.EPSILON) * 100)/100)
+    return roundedSum;
   }
 
   const getItemById = async (id)=>{
