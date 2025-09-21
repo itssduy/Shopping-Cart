@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router'
+import { Navigate, redirect } from 'react-router'
 import App from './components/App'
 import Cart from './components/pages/Cart'
 import Home from './components/pages/Home'
@@ -14,6 +14,8 @@ const routes = [
         element: <App />,
         errorElement: <Error />,
         children: [
+            {   index: true, 
+                element: <Navigate to="home"/> },
             {
                 path: 'home',
                 element: <Home />,
