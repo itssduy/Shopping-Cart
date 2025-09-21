@@ -14,33 +14,41 @@ const Cart = () => {
 
     return (
         <>
-        <ul>
-            {cart.map((item)=>{
-                return (
-                    <li key={item.id} className="cartItem"> 
-                        
-                        <Link to={itemsPage + item.id} className="cartItemDetails"> 
-                            <img src={item.image}></img>
+        {sum > 0 ? 
+        
+    
+            <ul>
+                {cart.map((item)=>{
+                    return (
+                        <li key={item.id} className="cartItem"> 
+                            
+                            <Link to={itemsPage + item.id} className="cartItemDetails"> 
+                                <img src={item.image}></img>
 
-                            <div className="cartItemDesc">
-                                <h1>{item.title}</h1>
-                                <h3>{item.price}</h3>
+                                <div className="cartItemDesc">
+                                    <h1>{item.title}</h1>
+                                    <h3>{item.price}</h3>
 
+                                </div>
+                                
+                            </Link> 
+                            
+                                
+                            <div className='increment'>
+                                <button className="incrementBtn" onClick={()=>{removeItemFromCart(item.id)}}>-</button>
+                                <h1>{item.count}</h1>
+                                <button className="incrementBtn" onClick={ ()=>{addItemToCart(item.id, 1)}}>+</button>
                             </div>
                             
-                        </Link> 
-                        
-                            
-                        <div className='increment'>
-                            <button className="incrementBtn" onClick={()=>{removeItemFromCart(item.id)}}>-</button>
-                            <h1>{item.count}</h1>
-                            <button className="incrementBtn" onClick={ ()=>{addItemToCart(item.id)}}>+</button>
-                        </div>
-                        
-                    </li>
-                )
-            })}
-        </ul>
+                        </li>
+                    )
+                })}
+            </ul>
+            :
+            <h1>Please add to your cart</h1>
+        }
+
+        
 
 
         <div className="cartInfo">

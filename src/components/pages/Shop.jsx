@@ -23,7 +23,7 @@ const Shop = () => {
 
     return (
         <>
-            <Searchbar />
+            {/* <Searchbar /> */}
 
             <section className="container">
 

@@ -17,3 +17,7 @@
     border-radius: 10px;
     background-color: var(--background-color);
 }
+
+.count {
+    display: flex;
+}

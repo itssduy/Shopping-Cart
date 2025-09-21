@@ -1,18 +1,47 @@
 nav {
     
-    background-color: var(--secondary-color);
-    border: 1px solid black;
+    color: var(--secondary-text-color);
+
 }
 
 .navlist {
     display: flex;
     list-style: none;
+    position: relative;
+
+    align-items: center;
     justify-content: space-between;
 
-    padding: 0 50px;
 
 }
 
+
+.menu {
+    flex: 1;
+    display: flex;
+    
+}
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    width: 50px;
+}
+
+.cart {
+    flex: 1;
+    justify-content: end;
+}
+.cart {
+    li {
+        display: flex;
+        justify-content: end;
+    }
+}
 a {
     padding: 20px;
     font-size: 30px;

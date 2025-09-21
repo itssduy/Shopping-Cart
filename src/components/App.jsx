@@ -37,7 +37,7 @@ function App() {
     }
 
   }
-  const addItemToCart = async (id)=>{
+  const addItemToCart = async (id, count)=>{
     let tempCart = [...cart]
     const curItem = await getItemById(id);
     let itemFound = false;
@@ -47,7 +47,7 @@ function App() {
         let newItem = item;
         if(item.id == id){
             itemFound = true;
-            newItem = {...item, count: item.count+1}
+            newItem = {...item, count: item.count+count}
         }
         return newItem
     })

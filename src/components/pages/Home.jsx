@@ -10,7 +10,7 @@ const Home = () => {
         <>
             <div className='home'>
                 <section>
-                    <h1>Welcome to Cool Shop!</h1>
+                    <h1>Welcome to StyleHub!</h1>
                     <h3>Discover amazing products at a great price!</h3>
                 </section>
 

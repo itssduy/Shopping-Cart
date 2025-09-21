@@ -3,8 +3,8 @@
 
 .shop {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 10px;
 }
 
 .shopItem {
