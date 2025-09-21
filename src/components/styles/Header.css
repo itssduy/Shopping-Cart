@@ -1,7 +1,10 @@
 header {
+    position: sticky;
+    top: 0px;
     display: flex;
     flex-direction: column;
 
     background-color: var(--primary-color);
 
+    z-index: 1;
 }

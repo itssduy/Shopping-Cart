@@ -22,6 +22,14 @@
     max-width: 100%;
 }
 
+.shopItem:hover {
+    opacity: 80%;
+}
+
+.shopItem:active {
+    opacity: 50%;
+}
+
 .shopItemImage {
     width: 100%;
     display: flex;
