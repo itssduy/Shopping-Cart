@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router'
 import Header from './templates/Header'
-import Footer from './templates/Footer'
+import Footer from './shared/Footer'
 import './App.css'
 import { useEffect, useState } from 'react'
 

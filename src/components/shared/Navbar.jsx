@@ -1,6 +1,5 @@
-import { Link, useOutletContext } from 'react-router'
+import { Link } from 'react-router'
 import '../styles/Navbar.css'
-import diamond from '../../assets/diamond.svg'
 import flower from '../../assets/flower.svg'
 const Navbar = ({cartLength}) => {
 
