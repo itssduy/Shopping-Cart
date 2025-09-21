@@ -11,8 +11,14 @@ function App() {
 
   useEffect(()=>{
     //Check to see if a cart is in local storage and if it is then load it
-    
+    if(localStorage.getItem('cart')){
+        const localCart = JSON.parse(localStorage.getItem('cart'))
+
+      setCart(localCart)
+    }
   }, [])
+
+
 
 
   const itemsInCart = ()=>{
@@ -54,9 +60,13 @@ function App() {
     if(itemFound){
         setCart(tempCart)
     } else {
-        setCart([...cart, {...curItem, count: 1}]);
+        tempCart = [...cart, {...curItem, count: 1}]
+        
+        setCart(tempCart);
 
     }
+
+    localStorage.setItem('cart', JSON.stringify(tempCart))
 
         
   }
@@ -73,6 +83,8 @@ function App() {
       return newItem
     })
     setCart(tempCart)
+    localStorage.setItem('cart', JSON.stringify(tempCart))
+
   }
 
 
