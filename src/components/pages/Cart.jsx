@@ -17,7 +17,7 @@ const Cart = () => {
         {sum > 0 ? 
         
     
-            <ul>
+            <ul >
                 {cart.map((item)=>{
                     return (
                         <li key={item.id} className="cartItem"> 
