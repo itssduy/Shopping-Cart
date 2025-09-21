@@ -80,7 +80,7 @@ function App() {
   return (
     <>
         <Navbar cartLength={itemsInCart()}/>
-        <Outlet context={{cart, setCart, addItemToCart, removeItemFromCart}}/>
+        <Outlet context={{cart, setCart, addItemToCart, removeItemFromCart, getItemById}}/>
     </>
   )
 }

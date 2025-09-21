@@ -1,14 +1,13 @@
-import { Outlet, useOutletContext, useParams } from "react-router"
+import { Outlet, useOutletContext } from "react-router"
 const ShopLayout = ()=>{
-    const {cart, setCart, addItemToCart} = useOutletContext();
-
+    const {cart, setCart, addItemToCart, removeItemFromCart, getItemById} = useOutletContext();
 
 
     
 
     return (
         <>
-            <Outlet context={addItemToCart}/>
+            <Outlet context={{addItemToCart, getItemById}}/>
         </>
     )
 }
