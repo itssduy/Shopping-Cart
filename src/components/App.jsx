@@ -2,7 +2,6 @@ import { Outlet } from 'react-router'
 import Navbar from './shared/Navbar'
 import './App.css'
 import { useEffect, useState } from 'react'
-import itemFile from '../Items.json'
 
 
 function App() {
@@ -17,22 +16,31 @@ function App() {
 
   const itemsInCart = ()=>{
     let sum = 0;
-    const count = cart.map((item)=>{
+    cart.map((item)=>{
       sum += item.count;
     })
     return sum;
   }
 
-  const findItemById = (id)=>{
+  const getItemById = async (id)=>{
+    let itemFound;
+    try{
+      const response = await fetch('https://fakestoreapi.com/products/'+id)
+      
+      const data = await response.json();
+      return data
+    }
+    catch(error){
+      console.log(error)
+    }
+    return itemFound
 
-    return itemFile.find((item)=>{
-
-        return item.id == id
-    })
   }
-  const addItemToCart = (id)=>{
+  const addItemToCart = async (id)=>{
     let tempCart = [...cart]
+    const curItem = await getItemById(id);
     let itemFound = false;
+
     tempCart = tempCart.map((item)=>{
 
         let newItem = item;
@@ -45,10 +53,10 @@ function App() {
     if(itemFound){
         setCart(tempCart)
     } else {
-        const curItem = findItemById(id);
         setCart([...cart, {...curItem, count: 1}]);
 
     }
+
         
   }
 
@@ -58,8 +66,6 @@ function App() {
       let newItem = item;
       if(item.id == id ){
           newItem = {...item, count: item.count-1}
-
-        
           
 
       } 

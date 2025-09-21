@@ -7,10 +7,9 @@ const itemsPage = '/shop/'
 const Cart = () => {
     const {cart, setCart, addItemToCart, removeItemFromCart} = useOutletContext();
 
-
     let sum = 0;
     cart.map((item)=>{
-        sum+=item.price * item.count
+        sum+=Math.round(item.price * item.count*100)/100
     })
 
     return (
@@ -21,7 +20,7 @@ const Cart = () => {
                     <li key={item.id}> 
 
                         <Link to={itemsPage + item.id}> 
-                            {item.name} : {item.count} 
+                            {item.title} : {item.count} 
                         </Link> 
                         
                             <button onClick={()=>{removeItemFromCart(item.id)}}>-</button>
